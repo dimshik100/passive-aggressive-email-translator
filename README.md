@@ -20,16 +20,22 @@ git clone https://github.com/dimshik100/passive-aggressive-email-translator/
 
 # get dependencies and build
 npm install
-npm update
 npm run build
 ````
 
 Now ensure the code loads and works:
 
-* Load the folder containing the extension (or `manifest.json`) in
+* [Load the folder containing the extension](https://developer.chrome.com/extensions/getstarted) (or `manifest.json`) in
 your browser.
 
-<!-- Add a link with an explanation on how to load local chrome extension -->
+    1. Open the Extension Management page by navigating to chrome://extensions.
+        The Extension Management page can also be opened by clicking on the Chrome menu, hovering over More Tools then selecting Extensions.
+    2. Enable Developer Mode by clicking the toggle switch next to Developer mode.
+    3. Click the LOAD UNPACKED button and select the extension directory.
+![alt text](https://developer.chrome.com/static/images/get_started/load_extension.png)
+
+    4. Ta-da! The extension has been successfully installed. Because no icons were included in the manifest, a generic toolbar icon will be created for the extension.
+
 
 * Load `mail.google.com` in your browser and open the developer console.
 
@@ -40,8 +46,9 @@ You should be greeted by a message saying the following
 If that works, you should now be ready to customize the
 extension-code. Do this by editing `extension.js`.
 
-You can also interact with a instance of `Gmail.js`. `gmail`
-should be exposed in the developer console as a global
+You can also interact with a instance of `gmail.js`. 
+
+`gmail` should be exposed in the developer console as a global
 variable.
 
 You can use this to play around and get familiar with the API.
