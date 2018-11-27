@@ -1,0 +1,33 @@
+{
+  "name": "passive-aggressive-email-translator-chrome-extension",
+  "version": "1.0.0",
+  "description": "Chrome extension that identifies and translates passive aggressive email in Gmail client",
+  "main": "",
+  "scripts": {
+    "watch-css": "catw -c 'lessc -' 'style/*.less' -o static/bundle.css -v",
+    "watch-js": "watchify browser/*.js -o static/bundle.js -dv",
+    "watch": "npm run watch-css & npm run watch-js",
+    "build-css": "catw -c 'lessc -' 'src/*.less' > dist/styleInjector.css",    
+    "build-js": "browserify src/extension.js > dist/extension.js",
+    "build2": "npm run build-css && npm run build-js",
+
+    "deps": "npm install",
+    "stage": "mkdir dist || echo Dist already exists.",
+    "bundle": "browserify -o dist/extension.js src/extension.js",
+    "build": "npm run stage && npm run bundle"
+  },
+  "author": "Dima Vishnevetsky (DiMsHiK)",
+  "license": "ISC",
+  "dependencies": {
+    "gmail-js": "^0.6.13",
+    "jquery": "^3.3.1",
+    "jquery-tooltip-basic": "^1.0.1",
+    "mark.js": "^8.11.1"
+  },
+  "devDependencies": {
+    "browserify": "^13.3.0",
+    "catw": "^1.0.1",
+    "less": "^3.8.1",
+    "watchify": "^3.11.0"
+  }
+}

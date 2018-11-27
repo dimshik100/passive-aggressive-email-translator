@@ -1,0 +1,21 @@
+module.exports = {
+  "just checking in": "I'm going to keep sending you emails about this until you respond.",
+  "sorry for being unclear": "No, I wasn't. Obviously you didn't really read what I wrote.You need to pay more attention!",
+  "as stated below": "You need to read the entire email chain, not just the top two lines because your dumb question has already been answered.",
+  "it has been brought to my attention": "You fucked up.",
+  "hope this helps": "Just stop bothering me.",
+  "let me clarify": "You completely misunderstood my last message, you idiot!",
+  "i see your point": "You can express your opinion but I give zero fucks.",
+  "thanks in advance": "I'm already thanking you for doing me his favor, even though you haven't yet agreed to it. Therefore, you must do it.",
+  "moving forward": "Stop wasting my time and just let it go already.",
+  "kind regards": "F*** you.",
+  "per my last email": "You better re-read the whole thing again so you won't ask me stupid questions.",
+  "any updates on this?": "I am phrasing this as a question because screaming “I DEMAND IMMEDIATE UPDATES!” makes me look deranged.",
+  "sorry for the double email": "I am not sorry. I like sending double emails. They make me feel powerful. Tomorrow, I am going to send you a triple email, and I won't be sorry about that, either.",
+  "how can we avoid this in the future?": "Don't EVER do that again. And while this politely phrased sentence may sound like I'm willing to brainstorm ways to help you to figure it out, I'm most certainly not.",
+  "according to my records": "I'm looking at the information right now, and I'm 100% right. And I'll tell you exactly how you're wrong.",
+  "i hope you don't mind": "I went ahead and did something that I should have gotten your permission for. So sue me.",
+  "as no doubt you are aware": "You know this already, so denying it will only make you look dumb.",
+  "correct me if i'm wrong": "I'm definitely not wrong.",
+  "i'd just like to tweak a few things": "This pretty much needs to be completely redone. Thanks."
+}
