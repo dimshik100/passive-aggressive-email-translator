@@ -1,0 +1,8 @@
+// These override the default vars inside animate-sass/helpers/_settings.scss
+$use-bounceIn: true;
+$use-hinge: true;
+$hinge-origin: bottom center;
+
+@import "../node_modules/animate-sass/animate";
+
+@import "../node_modules/tipso/src/tipso.min"; 

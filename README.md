@@ -75,6 +75,18 @@ Check if we can use brain.js to detect more passive aggressive phrases
 Create a logo and an icon
 (https://www.barnesandnoble.com/w/passive-aggression-martin-kantor-md/1125984078) 
 
+
+Import partial code from animate.css (only the needed animations)
+https://github.com/tgdev/animate-sass
+example 
+http://sass-lang.com/documentation/file.SASS_REFERENCE.html#import
+
+
+Consider using webpack
+https://github.com/samuelsimoes/chrome-extension-webpack-boilerplate
+
+
+
 -->
 
 

@@ -4,30 +4,27 @@
   "description": "Chrome extension that identifies and translates passive aggressive email in Gmail client",
   "main": "",
   "scripts": {
-    "watch-css": "catw -c 'lessc -' 'style/*.less' -o static/bundle.css -v",
-    "watch-js": "watchify browser/*.js -o static/bundle.js -dv",
-    "watch": "npm run watch-css & npm run watch-js",
-    "build-css": "catw -c 'lessc -' 'src/*.less' > dist/styleInjector.css",    
+    "watch-sass": "sass --watch src/style.scss:dist/style-injector.css",
+    "watch-js": "watchify src/extension.js -o dist/extension.js -dv",
+    "watch": "npm run watch-sass & npm run watch-js",
+    "build-sass": "sass src/style.scss dist/style-injector.css",
     "build-js": "browserify src/extension.js > dist/extension.js",
-    "build2": "npm run build-css && npm run build-js",
-
     "deps": "npm install",
     "stage": "mkdir dist || echo Dist already exists.",
-    "bundle": "browserify -o dist/extension.js src/extension.js",
-    "build": "npm run stage && npm run bundle"
+    "build": "npm run stage && npm run build-sass && npm run build-js"
   },
   "author": "Dima Vishnevetsky (DiMsHiK)",
   "license": "ISC",
-  "dependencies": {
+  "dependencies": {    
     "gmail-js": "^0.6.13",
     "jquery": "^3.3.1",
-    "jquery-tooltip-basic": "^1.0.1",
-    "mark.js": "^8.11.1"
+    "mark.js": "^8.11.1",
+    "tipso": "^1.0.8"
   },
   "devDependencies": {
+    "animate-sass": "^0.8.2",
     "browserify": "^13.3.0",
-    "catw": "^1.0.1",
-    "less": "^3.8.1",
+    "sass": "^1.15.1",
     "watchify": "^3.11.0"
   }
 }

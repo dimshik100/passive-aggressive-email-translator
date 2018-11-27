@@ -11,14 +11,17 @@ window.gmail = gmail;
 window.jQuery = jQuery;
 window.$ = window.jQuery;
 
-
 const dictionary = require('./dictionary');
 
 require('mark.js/dist/jquery.mark.js');
-require('jquery-tooltip-basic');
+require('tipso');
 
+// console.log(dictionary);
 
-console.log(dictionary);
+// chrome.runtime.sendMessage({
+//   action: 'updateIcon',
+//   value: false
+// });
 
 gmail.observe.on("load", () => {
 
@@ -29,18 +32,18 @@ gmail.observe.on("load", () => {
   Fine,
   Whatever.`);
 
-  // DOM observers
-  gmail.observe.on("compose", function (compose, type) {
-    // type can be compose, reply or forward
-    console.log('DIMA: api.dom.compose object:', compose, 'type is:', type);  // gmail.dom.compose object
-  });
+  // // DOM observers
+  // gmail.observe.on("compose", function (compose, type) {
+  //   // type can be compose, reply or forward
+  //   console.log('DIMA: api.dom.compose object:', compose, 'type is:', type);  // gmail.dom.compose object
+  // });
 
-  gmail.observe.on('recipient_change', function (match, recipients) {
-    console.log('DIMA: recipients changed', match, recipients);
-  });
+  // gmail.observe.on('recipient_change', function (match, recipients) {
+  //   console.log('DIMA: recipients changed', match, recipients);
+  // });
 
   gmail.observe.on('view_thread', function (obj) {
-    console.log('DIMA: conversation thread opened', obj); // gmail.dom.thread object
+    console.log('DIMA: conversation thread opened HAHAHA', obj); // gmail.dom.thread object
 
     setTimeout(() => {
       // gets the email contents of the last open email in the thread
@@ -59,30 +62,35 @@ gmail.observe.on("load", () => {
           const translation = dictionary[element.innerText.toLowerCase()];
           console.log(translation);
           
-          $(element).tooltip({
-            value: translation
+        //   $(element).tooltip({
+        //     value: translation
+        // });
+
+        $(element).tipso({
+          animationIn: 'bounceIn',
+          animationOut: 'hinge',
+          size: 'large',
+          content: translation
         });
+
         }
       });
     }, 500);
-
-
-
   });
 
-  gmail.observe.on('view_email', function (obj) {
-    console.log('DIMA: individual email opened', obj);  // gmail.dom.email object
+  // gmail.observe.on('view_email', function (obj) {
+  //   console.log('DIMA: individual email opened', obj);  // gmail.dom.email object
 
-    // check if we have some contents in the opened individual email inside a thread
-    if (obj.id_element && obj.id_element.length > 0) {
-      // gets the contents of this individual email inside a thread
-      console.log(obj.id_element[0])
-    }
-  });
+  //   // check if we have some contents in the opened individual email inside a thread
+  //   if (obj.id_element && obj.id_element.length > 0) {
+  //     // gets the contents of this individual email inside a thread
+  //     console.log(obj.id_element[0])
+  //   }
+  // });
 
-  gmail.observe.on("open_email", function (id, url, body, xhr) {
-    console.log("DIMA: id:", id, "url:", url, 'body', body, 'xhr', xhr);
-    console.log(gmail.get.email_data(id));
-    console.log(gmail.dom.email_contents());
-  })
+  // gmail.observe.on("open_email", function (id, url, body, xhr) {
+  //   console.log("DIMA: id:", id, "url:", url, 'body', body, 'xhr', xhr);
+  //   console.log(gmail.get.email_data(id));
+  //   console.log(gmail.dom.email_contents());
+  // })
 });
