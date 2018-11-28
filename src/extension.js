@@ -18,10 +18,26 @@ require('tipso');
 
 // console.log(dictionary);
 
+
 // chrome.runtime.sendMessage({
 //   action: 'updateIcon',
 //   value: false
 // });
+
+// chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+//   chrome.tabs.sendMessage(tabs[0].id, {action: 'updateIcon', value: false}, function(response) {
+//     console.log(response.farewell);
+//   });
+// });
+
+var event = document.createEvent('Event');
+
+// Define that the event name is 'foundPassiveAggressiveContent'.
+event.initEvent('foundPassiveAggressiveContent', true, true);
+
+// target can be any Element or other EventTarget.
+document.body.dispatchEvent(event);
+
 
 gmail.observe.on("load", () => {
 
@@ -42,40 +58,11 @@ gmail.observe.on("load", () => {
   //   console.log('DIMA: recipients changed', match, recipients);
   // });
 
+  checkIfWeHaveEmailContents();
+
   gmail.observe.on('view_thread', function (obj) {
     console.log('DIMA: conversation thread opened HAHAHA', obj); // gmail.dom.thread object
-
-    setTimeout(() => {
-      // gets the email contents of the last open email in the thread
-      const emailContents = gmail.dom.email_contents();
-      //console.log(obj.$el[0]);
-      console.log(emailContents[0]);
-
-      const arrayOfKeys = Object.keys(dictionary);
-
-      $(obj.$el[0]).mark(arrayOfKeys, {
-        "acrossElements": true,
-        "separateWordSearch": false,
-        "diacritics": false,
-        "each" : (element, other)=>{
-          console.log(element, other);
-          const translation = dictionary[element.innerText.toLowerCase()];
-          console.log(translation);
-          
-        //   $(element).tooltip({
-        //     value: translation
-        // });
-
-        $(element).tipso({
-          animationIn: 'bounceIn',
-          animationOut: 'hinge',
-          size: 'large',
-          content: translation
-        });
-
-        }
-      });
-    }, 500);
+    checkIfWeHaveEmailContents();
   });
 
   // gmail.observe.on('view_email', function (obj) {
@@ -94,3 +81,47 @@ gmail.observe.on("load", () => {
   //   console.log(gmail.dom.email_contents());
   // })
 });
+
+function checkIfWeHaveEmailContents() {
+  setTimeout(() => {
+    // gets the email contents of the last open email in the thread
+    const emailContents = gmail.dom.email_contents();
+    //console.log(obj.$el[0]);
+    console.log(emailContents[0]);
+
+
+    findAndMarkPassiveAggressivePhrases(emailContents[0], dictionary);
+
+
+
+  }, 500);
+}
+
+function findAndMarkPassiveAggressivePhrases(emailContentsElement, dictionary) {
+  const arrayOfKeys = Object.keys(dictionary);
+
+  $(emailContentsElement).mark(arrayOfKeys, {
+    "acrossElements": true,
+    "separateWordSearch": false,
+    "diacritics": false,
+    "each": (element, other) => {
+      console.log(element, other);
+      const translation = dictionary[element.innerText.toLowerCase()];
+      console.log(translation);
+
+      //   $(element).tooltip({
+      //     value: translation
+      // });
+
+      $(element).tipso({
+        animationIn: 'bounceIn',
+        animationOut: 'hinge',
+        size: 'large',
+        background: '#ff0000',
+        color: '#ffffff',
+        content: translation
+      });
+
+    }
+  });
+}

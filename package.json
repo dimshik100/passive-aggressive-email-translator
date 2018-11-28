@@ -9,13 +9,15 @@
     "watch": "npm run watch-sass & npm run watch-js",
     "build-sass": "sass src/style.scss dist/style-injector.css",
     "build-js": "browserify src/extension.js > dist/extension.js",
+    "copy-files": "cpy manifest.json dist && cpy src/extensionInjector.js dist && cpy src/background.js dist && cpy icons dist/icons",
     "deps": "npm install",
     "stage": "mkdir dist || echo Dist already exists.",
-    "build": "npm run stage && npm run build-sass && npm run build-js"
+    "build": "npm run stage && npm run copy-files && npm run build-sass && npm run build-js"
+  
   },
   "author": "Dima Vishnevetsky (DiMsHiK)",
   "license": "ISC",
-  "dependencies": {    
+  "dependencies": {
     "gmail-js": "^0.6.13",
     "jquery": "^3.3.1",
     "mark.js": "^8.11.1",
@@ -24,6 +26,7 @@
   "devDependencies": {
     "animate-sass": "^0.8.2",
     "browserify": "^13.3.0",
+    "cpy-cli": "^2.0.0",
     "sass": "^1.15.1",
     "watchify": "^3.11.0"
   }
