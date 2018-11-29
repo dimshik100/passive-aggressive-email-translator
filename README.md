@@ -1,10 +1,8 @@
 
 # Passive Aggressive Email Translator
 
-This repo contains a Chrome extension that identifies and translates passive 
-aggressive phrases in emails.
+This repo contains a Chrome extension that identifies and translates passive aggressive phrases in emails.
 Currently works only with Gmail client.
-This extension is using [gmail.js](https://github.com/KartikTalwar/gmail.js/) library.
 
 ## Try it
 
@@ -14,18 +12,18 @@ This extension is using [gmail.js](https://github.com/KartikTalwar/gmail.js/) li
 
 First get the code and build it:
 
-````
+```
 # get code
 git clone https://github.com/dimshik100/passive-aggressive-email-translator/
 
 # get dependencies and build
 npm install
 npm run build
-````
+```
 
 Now ensure the code loads and works:
 
-* [Load the folder containing the extension](https://developer.chrome.com/extensions/getstarted) (or `manifest.json`) in
+* [Load the "dist" folder containing the extension](https://developer.chrome.com/extensions/getstarted) (or `manifest.json`) in
 your browser.
 
     1. Open the Extension Management page by navigating to chrome://extensions.
@@ -41,12 +39,14 @@ your browser.
 
 You should be greeted by a message saying the following
 
-    Hello, <you>. This is your passive aggressive extension talking!
+```
+Hello, <you>. This is your passive aggressive extension talking!
+```
 
 If that works, you should now be ready to customize the
 extension-code. Do this by editing `extension.js`.
 
-You can also interact with a instance of `gmail.js`. 
+This extension is using [gmail.js](https://github.com/KartikTalwar/gmail.js/) library.
 
 `gmail` should be exposed in the developer console as a global
 variable.
@@ -56,7 +56,23 @@ You can use this to play around and get familiar with the API.
 Cheers!
 
 
+## TODO
 
+[x] Import partial code from animate.css (only the needed animations)
+    Use [animate sass](https://github.com/tgdev/animate-sass)
+
+[x] Mark passive aggressive phrases in open emails.
+    Use [mark.js](https://markjs.io/)
+
+[x] Add a tooltip that appears when hovering over a passive aggressive phrase with the real meaning of the phrase.
+    Use [tipso](https://tipso.object505.com/)
+
+[ ] Change from browserify to webpack.
+Checkout [chrome extension webpack boilerplate](https://github.com/samuelsimoes/chrome-extension-webpack-boilerplate)
+
+[ ] Change extension icon to Enabled / Disabled mode if the user is in Gmail or not.
+
+[ ] Add a badge to extension icon with the number of found passive aggressive phrases in the opened email.
 
 <!-- 
 
@@ -75,18 +91,4 @@ Check if we can use brain.js to detect more passive aggressive phrases
 Create a logo and an icon
 (https://www.barnesandnoble.com/w/passive-aggression-martin-kantor-md/1125984078) 
 
-
-Import partial code from animate.css (only the needed animations)
-https://github.com/tgdev/animate-sass
-example 
-http://sass-lang.com/documentation/file.SASS_REFERENCE.html#import
-
-
-Consider using webpack
-https://github.com/samuelsimoes/chrome-extension-webpack-boilerplate
-
-
-
 -->
-
-
