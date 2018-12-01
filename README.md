@@ -70,9 +70,11 @@ Cheers!
 [ ] Change from browserify to webpack.
 Checkout [chrome extension webpack boilerplate](https://github.com/samuelsimoes/chrome-extension-webpack-boilerplate)
 
-[ ] Change extension icon to Enabled / Disabled mode if the user is in Gmail or not.
+[x] Create extension icon. Add source file.
 
-[ ] Add a badge to extension icon with the number of found passive aggressive phrases in the opened email.
+[x] Change extension icon to Enabled / Disabled mode if the user is in Gmail or not.
+
+[ ] ~~Add a badge to extension icon with the number of found passive aggressive phrases in the opened email.~~
 
 <!-- 
 
@@ -90,5 +92,9 @@ Check if we can use brain.js to detect more passive aggressive phrases
 
 Create a logo and an icon
 (https://www.barnesandnoble.com/w/passive-aggression-martin-kantor-md/1125984078) 
+
+
+// Credit the icon author
+Icons made by [Freepik](https://www.flaticon.com/authors/freepik") from [www.flaticon.com]("https://www.flaticon.com/") is licensed by [CC 3.0 BY]("http://creativecommons.org/licenses/by/3.0/")
 
 -->
