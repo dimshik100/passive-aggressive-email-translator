@@ -4,5 +4,71 @@ $use-hinge: true;
 $hinge-origin: bottom center;
 
 @import "../node_modules/animate-sass/animate";
+@import "../node_modules/tipso/src/tipso.min";
 
-@import "../node_modules/tipso/src/tipso.min"; 
+mark.passive-aggressive-phrase {
+    position: relative;
+    text-decoration: none;
+    z-index: 1;
+    background-color: transparent;
+    border-bottom: none;
+}
+
+.passive-aggressive-phrase:before {
+    content: "";
+    background: red;
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    border-radius: 2px;
+    transform: scaleX(0);
+    animation: 0.5s forwards hover-v linear;
+    animation-fill-mode: forwards;
+    z-index: -1;
+}
+
+//   .mark:hover:before,
+//   .mark:focus:before {
+//     animation: 0.5s forwards hover-v linear;
+//     animation-fill-mode: forwards;
+//   }
+@keyframes hover-v {
+    0% {
+        transform: scaleX(0);
+        height: 5px;
+    }
+    45% {
+        transform: scaleX(1.05);
+        height: 5px;
+    }
+    55% {
+        height: 5px;
+    }
+    100% {
+        transform: scaleX(1.05);
+        // height: 3.8rem;
+        height: 100%;
+    }
+}
+
+@keyframes no-hover-v {
+    0% {
+        transform: scaleX(1.05);
+        height: 3.8rem;
+    }
+    45% {
+        height: 5px;
+    }
+    55% {
+        transform: scaleX(1.05);
+        height: 5px;
+        opacity: 1;
+    }
+    100% {
+        transform: scaleX(0);
+        height: 5px;
+        opacity: 0.02;
+    }
+}

@@ -16,20 +16,6 @@ const dictionary = require('./dictionary');
 require('mark.js/dist/jquery.mark.js');
 require('tipso');
 
-// console.log(dictionary);
-
-
-// chrome.runtime.sendMessage({
-//   action: 'updateIcon',
-//   value: false
-// });
-
-// chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-//   chrome.tabs.sendMessage(tabs[0].id, {action: 'updateIcon', value: false}, function(response) {
-//     console.log(response.farewell);
-//   });
-// });
-
 var event = document.createEvent('Event');
 
 // Define that the event name is 'foundPassiveAggressiveContent'.
@@ -89,10 +75,7 @@ function checkIfWeHaveEmailContents() {
     //console.log(obj.$el[0]);
     console.log(emailContents[0]);
 
-
     findAndMarkPassiveAggressivePhrases(emailContents[0], dictionary);
-
-
 
   }, 500);
 }
@@ -104,15 +87,11 @@ function findAndMarkPassiveAggressivePhrases(emailContentsElement, dictionary) {
     "acrossElements": true,
     "separateWordSearch": false,
     "diacritics": false,
+    "className": "passive-aggressive-phrase",
     "each": (element, other) => {
       console.log(element, other);
       const translation = dictionary[element.innerText.toLowerCase()];
       console.log(translation);
-
-      //   $(element).tooltip({
-      //     value: translation
-      // });
-
       $(element).tipso({
         animationIn: 'bounceIn',
         animationOut: 'hinge',
@@ -121,7 +100,6 @@ function findAndMarkPassiveAggressivePhrases(emailContentsElement, dictionary) {
         color: '#ffffff',
         content: translation
       });
-
     }
   });
 }
