@@ -83,23 +83,31 @@ function checkIfWeHaveEmailContents() {
 function findAndMarkPassiveAggressivePhrases(emailContentsElement, dictionary) {
   const arrayOfKeys = Object.keys(dictionary);
 
-  $(emailContentsElement).mark(arrayOfKeys, {
-    "acrossElements": true,
-    "separateWordSearch": false,
-    "diacritics": false,
-    "className": "passive-aggressive-phrase",
-    "each": (element, other) => {
-      console.log(element, other);
-      const translation = dictionary[element.innerText.toLowerCase()];
-      console.log(translation);
-      $(element).tipso({
-        animationIn: 'bounceIn',
-        animationOut: 'hinge',
-        size: 'large',
-        background: '#ff0000',
-        color: '#ffffff',
-        content: translation
-      });
-    }
-  });
+  const $emailContentsElement = $(emailContentsElement);
+
+  for (const key of arrayOfKeys) {
+    $emailContentsElement.mark(key, {
+      "acrossElements": true,
+      "separateWordSearch": false,
+      "diacritics": false,
+      "className": "passive-aggressive-phrase",
+      "each": (element, other) => {
+        console.log(element, other);
+
+        const translation = dictionary[key];
+
+        console.log(translation);
+
+        $(element).tipso({
+          animationIn: 'bounceIn',
+          animationOut: 'hinge',
+          size: 'large',
+          background: '#ff0000',
+          color: '#ffffff',
+          content: translation
+        });
+      }
+    });
+  }
+
 }
