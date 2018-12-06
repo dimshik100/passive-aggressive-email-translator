@@ -67,23 +67,23 @@ Cheers!
 
 ## TODO
 
-[x] Import partial code from animate.css (only the needed animations)
+- [x] Import partial code from animate.css (only the needed animations)
     Use [animate sass](https://github.com/tgdev/animate-sass)
 
-[x] Mark passive aggressive phrases in open emails.
+- [x] Mark passive aggressive phrases in open emails.
     Use [mark.js](https://markjs.io/)
 
-[x] Add a tooltip that appears when hovering over a passive aggressive phrase with the real meaning of the phrase.
+- [x] Add a tooltip that appears when hovering over a passive aggressive phrase with the real meaning of the phrase.
     Use [tipso](https://tipso.object505.com/)
 
-[ ] Change from browserify to webpack.
+- [ ] Change from browserify to webpack.
 Checkout [chrome extension webpack boilerplate](https://github.com/samuelsimoes/chrome-extension-webpack-boilerplate)
 
-[x] Create extension icon. Add source file.
+- [x] Create extension icon. Add source file.
 
-[x] Change extension icon to Enabled / Disabled mode if the user is in Gmail or not.
+- [x] Change extension icon to Enabled / Disabled mode if the user is in Gmail or not.
 
-[ ] ~~Add a badge to extension icon with the number of found passive aggressive phrases in the opened email.~~
+- [ ] ~~Add a badge to extension icon with the number of found passive aggressive phrases in the opened email.~~
 
 <!-- 
 
