@@ -29,11 +29,6 @@ mark.passive-aggressive-phrase {
     z-index: -1;
 }
 
-//   .mark:hover:before,
-//   .mark:focus:before {
-//     animation: 0.5s forwards hover-v linear;
-//     animation-fill-mode: forwards;
-//   }
 @keyframes hover-v {
     0% {
         transform: scaleX(0);
@@ -56,7 +51,7 @@ mark.passive-aggressive-phrase {
 @keyframes no-hover-v {
     0% {
         transform: scaleX(1.05);
-        height: 3.8rem;
+        height: 100%;
     }
     45% {
         height: 5px;

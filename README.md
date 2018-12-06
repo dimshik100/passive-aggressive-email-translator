@@ -97,4 +97,11 @@ Create a logo and an icon
 // Credit the icon author
 Icons made by [Freepik](https://www.flaticon.com/authors/freepik") from [www.flaticon.com]("https://www.flaticon.com/") is licensed by [CC 3.0 BY]("http://creativecommons.org/licenses/by/3.0/")
 
+
+Add option to toggle the markings from the extension button.
+Use $(".context").unmark(options);
+
+
+Add option of animating the extension icon
+https://hackernoon.com/using-pixijs-to-generate-or-animate-a-chrome-extension-icon-cad2d5ff40c9
 -->
