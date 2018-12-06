@@ -9,7 +9,7 @@
     "watch": "npm run watch-sass & npm run watch-js",
     "build-sass": "sass src/style.scss dist/style-injector.css",
     "build-js": "browserify src/extension.js > dist/extension.js",
-    "copy-files": "cpy manifest.json dist && cpy src/extensionInjector.js dist && cpy src/background.js dist && cpy icons/*.png dist/icons",
+    "copy-files": "cpy manifest.json dist && cpy src/extensionInjector.js dist && cpy src/background.js dist && cpy icons/*.png dist/icons && cpy src/popup.html dist",
     "deps": "npm install",
     "stage": "mkdir dist || echo Dist already exists.",
     "build": "npm run stage && npm run copy-files && npm run build-sass && npm run build-js"

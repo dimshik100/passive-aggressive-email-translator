@@ -10,7 +10,8 @@
       "16": "icons/icon_extension_toolbar_16.png",
       "32": "icons/icon_extension_toolbar_32.png"
     },
-    "default_title": "Passive Aggressive Email Translator"
+    "default_title": "Passive Aggressive Email Translator",
+    "default_popup": "popup.html"
   },
   "icons": {
     "16": "icons/icon_extension_toolbar_16.png",
@@ -39,7 +40,7 @@
     }
   ],
   "web_accessible_resources": [
-    "extension.js"
+    "extension.js"   
   ],
   "permissions": [
     "declarativeContent",
