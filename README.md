@@ -1,7 +1,8 @@
 
 # Passive Aggressive Email Translator
 
-![alt text](./assets/Promotional tile 440x280.jpg)
+<img src="./assets/Promotional tile 440x280.jpg" alt="passive aggressive promotional"/>
+
 
 This repo contains a Chrome extension that identifies and translates passive aggressive phrases in emails.
 Currently works only with Gmail client.
@@ -12,9 +13,9 @@ Currently works only with Gmail client.
 
 ### Screenshots
 
-![alt text](./assets/screenshot 1.png)
-
-![alt text](./assets/screenshot 2.png)
+<img src="./assets/screenshot 1.png" alt="passive aggressive screenshot" width="500"/>
+<img src="./assets/screenshot 2.png" alt="passive aggressive screenshot" width="500"/>
+<img src="./assets/screenshot 3.png" alt="passive aggressive screenshot" width="500"/>
 
 ## For developers
 
